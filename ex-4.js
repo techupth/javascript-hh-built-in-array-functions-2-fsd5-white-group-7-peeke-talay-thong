@@ -379,10 +379,12 @@ let filteredBills = bills.filter((item) => item.member != null);
 const billMembers = filteredBills.map((item) => item.member.name);
 
 let member = [];
-const totalMembers = billMembers.map((item) => {
+const totalMembers = billMembers.filter((item) => {
   if (!member.includes(item)) {
     member.push(item);
+    return true;
   }
 });
+console.log(totalMembers);
 
-console.log(`Unique Members Count: ${member.length}`);
+console.log(`Unique Members Count: ${totalMembers.length}`);
