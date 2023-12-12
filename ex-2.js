@@ -374,5 +374,9 @@ const bills = [
 ];
 
 // Start coding here
-
-const newBills;
+function filterBills(item) {
+  let filteredBills = item.filter((item) => item.member != null);
+  return filteredBills;
+}
+const newBills = filterBills(bills);
+console.log(newBills);
