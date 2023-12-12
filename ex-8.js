@@ -375,14 +375,14 @@ const bills = [
 
 // Start coding here
 function calculate(item) {
-  let totalPaid = item.reduce((total, current) => {
-    if (!total[current.location]) {
-      total[current.location] = 0;
+  let totalPaid = item.reduce((acc, current) => {
+    if (!acc[current.location]) {
+      acc[current.location] = 0;
     }
 
-    total[current.location] += current.total;
+    acc[current.location] += current.total;
 
-    return total;
+    return acc;
   }, {});
   return totalPaid;
 }
