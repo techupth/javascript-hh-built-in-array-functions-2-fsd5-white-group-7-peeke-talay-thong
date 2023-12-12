@@ -374,4 +374,29 @@ const bills = [
 ];
 
 // Start coding here
-const totalMembers;
+
+const billMembers = bills.filter((bill) => bill.member !== null);
+const memberName = billMembers.reduce((acc, curr) => {
+  acc.push(curr.member.name);
+  return acc;
+}, []);
+
+const member = [];
+const totalMembers = memberName.filter((name) => {
+  if (!member.includes(name)) {
+    member.push(name);
+    return true;
+  }
+});
+
+console.log(`Unique Members Count: ${totalMembers.length}`);
+
+// sulotion 2
+// const cleanMemberName = memberName.reduce((acc, curr) => {
+//   if (!acc.includes(curr)) {
+//     acc.push(curr);
+//   }
+//   return acc;
+// }, []);
+
+// console.log(cleanMemberName.length)
