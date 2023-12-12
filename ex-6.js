@@ -2,6 +2,10 @@ const carCollection = ["toyota", "fiat", "honda", "bmw"];
 
 function updateCarCollection(carBrand) {
   // Start coding here
+  const brandIndex = carCollection.indexOf(carBrand);
+  return brandIndex === -1
+  ? `new car collection is: ${carCollection.join(', ')}, ${carBrand}.`
+  : `${carBrand} already exits in position ${brandIndex + 1} of the car collection.`;
 }
 
 //ผลลัพธ์ที่ควรได้จาก Example case
